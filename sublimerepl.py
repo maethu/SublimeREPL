@@ -561,6 +561,8 @@ class ReplManager(object):
         res["file"] = filename
         res["file_path"] = os.path.dirname(filename)
         res["file_basename"] = os.path.basename(filename)
+        res["file_basename_without_extension"] = os.path.splitext(
+            res["file_basename"])[0]
         if 'folder' not in res:
             res["folder"] = res["file_path"]
 
