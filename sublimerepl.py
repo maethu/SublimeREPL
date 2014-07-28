@@ -558,6 +558,11 @@ class ReplManager(object):
         if not filename:
             return res
         filename = os.path.abspath(filename)
+
+        # selected text
+        region = av.sel()[0]
+        res['selected'] = av.substr(region)
+
         res["file"] = filename
         res["file_path"] = os.path.dirname(filename)
         res["file_basename"] = os.path.basename(filename)
